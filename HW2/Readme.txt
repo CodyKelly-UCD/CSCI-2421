@@ -26,9 +26,9 @@ difference operations on the two sets.
 *******************************************************
 
 Name:  main.cpp
-   Main program.  This is the driver program that asks 
-the user for input, checks if the player is correct in 
-their guesses and if they would like to play again.
+   Main program.  This is the driver program that gets
+   input from file and calls the necessary methods to
+   process the data.
    
    
 *******************************************************
@@ -71,3 +71,11 @@ their guesses and if they would like to play again.
 
 4. Delete the obj files, executables, and core dump by
    %./make clean
+
+*******************************************************
+*  Run-time Analysis
+*******************************************************
+
+In SetFunctions:
+  fillBag:
+    O(n)
