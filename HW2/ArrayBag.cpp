@@ -97,13 +97,18 @@ ArrayBag ArrayBag::operator+(const ArrayBag& bag2) const
     // First find all duplicates
     for (auto it = newBagVector.begin(); it != newBagVector.end(); it++)
     {
+        // If a number is already a known duplicate, we don't need to check
+        // and see if it's a duplicate again.
         bool itIsDuplicate = std::find(duplicates.begin(), duplicates.end(), *it) != duplicates.end();
+        
         if (!itIsDuplicate)
         {
             for (auto it2 = it + 1; it2 < newBagVector.end(); it2++)
             {
                 if (*it2 == *it)
                 {
+                    // If the number is not a known duplicate, but it exists
+                    // in both bags, we add it to the duplicate list
                     duplicates.push_back(*it2);
                 }
             }
@@ -135,20 +140,21 @@ ArrayBag ArrayBag::operator-(const ArrayBag &bag2) const
 
 std::ostream& operator<< (std::ostream& os, const ArrayBag& bag)
 {
+    // This function prints the bag in an easily readable format
     auto bagVec = bag.toVector();
     
-    os << '[';
+    os << '['; // Print opening bracket
     for (auto it = bagVec.begin(); it != bagVec.end(); it++)
     {
-        os << *it;
+        os << *it; // Then print a number
         
         if (it + 1 != bagVec.end())
         {
-            os << ", ";
+            os << ", "; // If we haven't reached the end we print a comma
         }
         else
         {
-            os << ']';
+            os << ']';  // Otherwise we'll print the closing bracket
         }
     }
     
