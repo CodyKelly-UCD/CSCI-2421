@@ -3,32 +3,18 @@
 #include <string>
 
 #include "node1.h"
+#include "functions.hpp"
 
 using main_savitch_5::node;
 using std::string;
-
-string getWordFromFile()
-{
-    string word;
-    
-    
-    
-    return word;
-}
-
-node* getListFromFile()
-{
-    node* head = new node;
-    
-    
-    
-    return head;
-}
+using std::ifstream;
 
 int main(int argc, char** argv)
 {
-    std::ifstream inputFile;
+    ifstream inputFile;
     std::string fileName;
+    node* list = NULL;
+    node* currentNode = list;
     
     // Open file
     if (argc > 1)
@@ -43,11 +29,21 @@ int main(int argc, char** argv)
     {
         inputFile.open(fileName);
     }
-    catch (const std::ifstream::failure& e)
+    catch (const ifstream::failure& e)
     {
         std::cout << "Exception opening/reading/closing file\n";
         exit(1);
     }
+
+    list = getListFromFile(inputFile);
+    currentNode = list;
+
+    while (currentNode->link() != NULL)
+    {
+        std::cout << currentNode->data() << ' ';
+        currentNode = currentNode->link();
+    }
+    std::cout << std::endl;
     
     // Get linked list of file contents
     
