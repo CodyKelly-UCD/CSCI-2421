@@ -133,5 +133,24 @@ namespace main_savitch_5
 	    source_ptr = source_ptr->link( );
 	}
     }
-
+    
+    void list_piece(const node* start_ptr, const node* end_ptr, node*& head_ptr, node*& tail_ptr)
+    {
+        node *newNode, *previousNode;
+        head_ptr->set_data(start_ptr->data());
+        start_ptr = start_ptr->link();
+        previousNode = head_ptr;
+        
+        while (start_ptr != end_ptr)
+        {
+            newNode = new node;
+            newNode->set_data(start_ptr->data());
+            previousNode->set_link(newNode);
+            previousNode = newNode;
+            start_ptr = start_ptr->link();
+        }
+        previousNode->set_link(tail_ptr);
+        tail_ptr->set_data(end_ptr->data());
+        tail_ptr->set_link(NULL);
+    }
 }
