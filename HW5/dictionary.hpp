@@ -16,7 +16,7 @@ class dictionary
 {
 public:
     //typedef string wordType;
-    dictionary();
+    dictionary() { }
     
     /*Searches the list starting at the front of the list and moving to the back
      Returns the number of searches it took to find the findString, or a -1 if not found*/
