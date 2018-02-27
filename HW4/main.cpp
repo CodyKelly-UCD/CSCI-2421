@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     // Get input and search for a sublist
     // If either of the searches return NULL, alert user and exit program
     std::cout << "\nPlease enter the first word to search for: ";
-    getline(std::cin, word1);
+    getline(std::cin, word1, ' ');
     firstSearch = main_savitch_5::list_search(listHead, word1);
     if (firstSearch == NULL)
     {
@@ -45,7 +45,7 @@ int main(int argc, char** argv)
         return 0;
     }
     std::cout << "\nPlease enter the second word to search for: ";
-    getline(std::cin, word2);
+    getline(std::cin, word2, ' ');
     secondSearch = main_savitch_5::list_search(firstSearch, word2);
     if (secondSearch == NULL)
     {

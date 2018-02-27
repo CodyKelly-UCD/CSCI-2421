@@ -104,15 +104,14 @@ std::string tolowerstring(std::string originalString)
 
 void sortList(main_savitch_5::node*& head)
 {
-    main_savitch_5::node* sortedHead = head;                // First element in sorted portion
     main_savitch_5::node* unSortedHead = head->link();      // First element in unsorted portion
     main_savitch_5::node* currentPtr = head;                // Our current position in the sorted list
-    main_savitch_5::node* nextSorted = NULL;                // Used to store temporary node pointers
+    main_savitch_5::node* newSorted = NULL;                 // Used to store temporary node pointers
     main_savitch_5::node* prevSorted = NULL;
     
-    sortedHead->set_link(NULL);
+    head->set_link(NULL);
     
-    while(unSortedHead != NULL)                     // If we haven't hit the end of the unsorted portion
+    while(unSortedHead != NULL)                 // If we haven't hit the end of the unsorted portion
     {
         while (tolowerstring(unSortedHead->data()) > tolowerstring(currentPtr->data()))
         // Compare the next unsorted element with each sorted element
@@ -129,21 +128,19 @@ void sortList(main_savitch_5::node*& head)
             }
         }
         
-        nextSorted = unSortedHead;              // Now that we know the position, save address for linking
+        newSorted = unSortedHead;               // Now that we know the position, save address for linking
         unSortedHead = unSortedHead->link();    // Continue to the next unsorted element
-        nextSorted->set_link(currentPtr);       // Link the new element to the next in sorted list
+        newSorted->set_link(currentPtr);        // Link the new element to the next in sorted list
         if (prevSorted == NULL)                 // If we're at the front of the sorted portion
         {
-            sortedHead = nextSorted;            // Make the new element the head
+            head = newSorted;                   // Make the new element the head
         }
         else
         {
-            prevSorted->set_link(nextSorted);   // If we're not at the front, link the previous
+            prevSorted->set_link(newSorted);   // If we're not at the front, link the previous
                                                 // element to the new one
         }
         prevSorted = NULL;                      // Reset the previous element to NULL for next loop
-        currentPtr = sortedHead;                // Reset the currentPtr to head
+        currentPtr = head;                // Reset the currentPtr to head
     }
-    
-    head = sortedHead;                          // Now that the list is sorted, set head to the new head
 }
