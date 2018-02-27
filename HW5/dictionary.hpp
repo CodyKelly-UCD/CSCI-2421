@@ -8,7 +8,7 @@
 #include <string>
 #include <list>
 #include <iostream>
-#include "DictEntry.h"
+#include "DictEntry.hpp"
 
 using namespace std;
 

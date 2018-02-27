@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E915C2DE2045DF3700736EAA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E915C2DD2045DF3700736EAA /* main.cpp */; };
+		E9A97E552045E197003CBD28 /* dictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A97E542045E197003CBD28 /* dictionary.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,11 @@
 /* Begin PBXFileReference section */
 		E915C2DA2045DF3700736EAA /* HW5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HW5; sourceTree = BUILT_PRODUCTS_DIR; };
 		E915C2DD2045DF3700736EAA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E9A97E4E2045E153003CBD28 /* findwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = findwords.txt; sourceTree = "<group>"; };
+		E9A97E4F2045E153003CBD28 /* DictEntry.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DictEntry.hpp; sourceTree = "<group>"; };
+		E9A97E502045E153003CBD28 /* dictionary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dictionary.hpp; sourceTree = "<group>"; };
+		E9A97E512045E153003CBD28 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
+		E9A97E542045E197003CBD28 /* dictionary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dictionary.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,11 @@
 		E915C2DC2045DF3700736EAA /* HW5 */ = {
 			isa = PBXGroup;
 			children = (
+				E9A97E4F2045E153003CBD28 /* DictEntry.hpp */,
+				E9A97E502045E153003CBD28 /* dictionary.hpp */,
+				E9A97E542045E197003CBD28 /* dictionary.cpp */,
+				E9A97E512045E153003CBD28 /* dictionary.txt */,
+				E9A97E4E2045E153003CBD28 /* findwords.txt */,
 				E915C2DD2045DF3700736EAA /* main.cpp */,
 			);
 			path = HW5;
@@ -119,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A97E552045E197003CBD28 /* dictionary.cpp in Sources */,
 				E915C2DE2045DF3700736EAA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
