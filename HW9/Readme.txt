@@ -52,19 +52,19 @@ functions.cpp
 
 1. Uncompress the homework.  The homework file is compressed.  
    To uncompress it use the following commands 
-       % unzip [KellyHW6]
+       % unzip [KellyHW9]
 
    Now you should see a directory named homework with the files:
         main.cpp
-        PostfixCalculater.hpp
-        PostfixCalculater.cpp
+        functions.cpp
+        functions.hpp
         makefile
         Readme.txt
 
 2. Build the program.
 
     Change to the directory that contains the file by:
-    % cd [KellyHW6] 
+    % cd [KellyHW9] 
 
     Compile the program by:
     % make
