@@ -5,10 +5,9 @@
 
 class InfixCalculator
 {
-private:
-    std::string to_postfix(std::string);    
 public:
-    std::string calculate(std::string);
+    std::string to_postfix(std::string);
+    int calculate_postfix(std::string);
 };
 
 #endif /* InfixCalculator_hpp */
