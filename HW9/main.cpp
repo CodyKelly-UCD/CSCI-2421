@@ -10,11 +10,10 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    unordered_set<string> dictionary;
+    unordered_set<string> dictionary, misspelledWords;
     ifstream dictFile, inputFile;
     string iFileName;
-    vector<string> misspelledWords;
-    int numWordsInInput = 0;
+    int numWordsInInput = 0, totalMisspelledWords = 0;
     
     dictFile.open("dict.txt");
     
@@ -67,7 +66,8 @@ int main(int argc, const char * argv[])
             // of misspelled words.
             if (result == dictionary.end())
             {
-                misspelledWords.push_back(word);
+                misspelledWords.insert(word);
+                totalMisspelledWords++;
             }
         }
     }
@@ -90,7 +90,8 @@ int main(int argc, const char * argv[])
     
     cout << "\nNumber of words in dictionary: " << dictionary.size() << endl;
     cout << "Number of words in input file: " << numWordsInInput << endl;
-    cout << "Number of words not in dictionary: " << misspelledWords.size() << endl;
+    cout << "Number of unique misspellings: " << misspelledWords.size() << endl;
+    cout << "Total number of misspellings: " << totalMisspelledWords << endl;
     
     return 0;
 }
