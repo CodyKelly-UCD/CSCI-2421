@@ -4,15 +4,11 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "BSTree.h"
 
 using namespace std;
 
 struct movieData
-{
-    
-};
-
-struct nominationData
 {
     
 };
@@ -35,6 +31,15 @@ struct awardStruct
     friend ostream& operator<< (ostream& out, const vector<awardStruct> *awards);
 };
 
+struct movieStruct
+{
+    
+};
+
+typedef BSTree<vector<awardStruct> *, string> actorActressTree;
+typedef BSTree<vector<movieStruct> *, string> movieTree;
+
 ostream& operator<< (ostream& out, const vector<awardStruct> *awards);
+ostream& operator<< (ostream& out, awardStruct awards);
 
 #endif /* dataTypes_hpp */
