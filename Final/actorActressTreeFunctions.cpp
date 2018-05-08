@@ -1,3 +1,5 @@
+#include <limits>
+
 #include "actorActressTreeFunctions.hpp"
 
 void modifyAward(awardStruct *award)

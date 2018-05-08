@@ -1,3 +1,5 @@
+#include <limits>
+
 #include "functions.hpp"
 #include "Node.h"
 
