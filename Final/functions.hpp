@@ -12,16 +12,24 @@
 
 using namespace std;
 
-int getInput(string, int, int);
+int getInput(string message, int);
+
+int getInput(string message, int, int);
+
+bool getBoolFromFile(ifstream &infile);
+
+int getIntFromFile(ifstream &infile);
+
+float getFloatFromFile(ifstream &infile);
 
 void clearScreen();
 
 void eat_white(std::ifstream& ifile);
 
-vector<actorActressData> getAADataFromFile(ifstream& file, BSTree<vector<awardStruct> *, string> *aaTree);
+int getYearFromUser();
 
-void aaDatabaseMenu(actorActressTree *);
+bool getBoolFromUser();
 
-void mainMenu(actorActressTree *);
+std::string tolower(std::string originalString);
 
 #endif /* Functions_hpp */

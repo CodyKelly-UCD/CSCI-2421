@@ -11,7 +11,7 @@ CXXFLAGS = -g -std=c++11
 
 LIBS = -lm
 
-OBJS = main.o dataTypes.o functions.o
+OBJS = main.o dataTypes.o functions.o actorActressTreeFunctions.o
 
 TARGET = main.out
 

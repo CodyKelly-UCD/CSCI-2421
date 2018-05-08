@@ -279,3 +279,70 @@ Node<DATATYPE, KEYTYPE> * BSTree<DATATYPE, KEYTYPE>::max(Node<DATATYPE, KEYTYPE>
 
 	return tempNode;
 }
+
+template <typename DATATYPE, typename KEYTYPE>
+void BSTree<DATATYPE, KEYTYPE>::fillVector(vector<Node<DATATYPE, KEYTYPE>*> &vec)
+{
+    if (Root() == nullptr)
+    {
+        return;
+    }
+    fillVector(Root(), vec);
+    
+    return;
+}
+
+template <typename DATATYPE, typename KEYTYPE>
+void BSTree<DATATYPE, KEYTYPE>::fillVector(Node<DATATYPE, KEYTYPE> *node, vector<Node<DATATYPE, KEYTYPE>*> &vec)
+{
+    if (node == nullptr)
+    {
+        return;
+    }
+    if (node->Left() != nullptr)
+    {
+        fillVector(node->Left(), vec);
+    }
+    vec.push_back(node);
+    if (node->Right() != nullptr)
+    {
+        fillVector(node->Right(), vec);
+    }
+}
+
+template <typename DATATYPE, typename KEYTYPE>
+void BSTree<DATATYPE, KEYTYPE>::toFile(ofstream &file, Node<DATATYPE, KEYTYPE> *node)
+{
+    if (node == nullptr)
+    {
+        return;
+    }
+    if (node->Left() != nullptr)
+    {
+        toFile(file, node->Left());
+    }
+    for (awardStruct award : *node->Data())
+    {
+        file << award.year << ',';
+        file << award.awardName << ',';
+        file << award.winner << ',';
+        file << node->Key() << ',';
+        file << award.filmName;
+        file << endl;
+    }
+    if (node->Right() != nullptr)
+    {
+        toFile(file, node->Right());
+    }
+}
+
+template <typename DATATYPE, typename KEYTYPE>
+void BSTree<DATATYPE, KEYTYPE>::toFile(ofstream &file)
+{
+    file << "Year,Award,Winner,Name,Film\n";
+    if (Root() == nullptr)
+    {
+        return;
+    }
+    toFile(file, Root());
+}

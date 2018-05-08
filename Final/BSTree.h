@@ -3,6 +3,8 @@
 #ifndef BSTREEINT_H
 #define BSTREEINT_H
 #include <iostream>
+#include <vector>
+#include <fstream>
 using namespace std;
 #include "Node.h"
 
@@ -16,6 +18,8 @@ private:
     void freeNode(Node<DATATYPE, KEYTYPE> * leaf);
 	void printInorder(Node<DATATYPE, KEYTYPE> * node);
 	Node<DATATYPE, KEYTYPE> * findNode(KEYTYPE key, Node<DATATYPE, KEYTYPE> * node);
+    void fillVector(Node<DATATYPE, KEYTYPE> *node, vector<Node<DATATYPE, KEYTYPE>*> &vec);
+    void toFile(ofstream &file, Node<DATATYPE, KEYTYPE> *);
 
 public:
     BSTree<DATATYPE, KEYTYPE>();
@@ -29,5 +33,7 @@ public:
     void deleteNode(KEYTYPE key);
 	Node<DATATYPE, KEYTYPE> * min(Node<DATATYPE, KEYTYPE> * node);
 	Node<DATATYPE, KEYTYPE> * max(Node<DATATYPE, KEYTYPE> * node);
+    void fillVector(vector<Node<DATATYPE, KEYTYPE>*>&);
+    void toFile(ofstream&);
 };
 #endif  //BST

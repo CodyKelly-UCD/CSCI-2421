@@ -4,15 +4,42 @@
 #include <fstream>
 
 #include "functions.hpp"
+#include "actorActressTreeFunctions.hpp"
 
-
+void mainMenu(actorActressTree *aaTree)
+{
+    int menuChoice = 0;
+    string menuString =
+    "Would you like to:\n"
+    "1) View the actor/actress database\n"
+    "2) View the movie database\n"
+    "3) Exit";
+    clearScreen();
+    menuChoice = getInput(menuString, 3);
+    
+    switch (menuChoice)
+    {
+        case 1:
+            aaDatabaseMenu(aaTree);
+            break;
+            
+        case 2:
+            break;
+            
+        case 3:
+            exit(1);
+            break;
+            
+        default:
+            break;
+    }
+}
 
 int main()
 {
-    ifstream aaFile("actor-actress.csv"), nFile("nominations.csv");
     actorActressTree *aaTree = new actorActressTree;
     
-    getAADataFromFile(aaFile, aaTree);
+    getAADataFromFile(aaTree);
     
     while (true)
     {
